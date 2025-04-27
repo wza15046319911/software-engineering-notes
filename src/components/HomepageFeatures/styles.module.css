@@ -1,0 +1,44 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.quickNavCard {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  display: block;
+}
+
+.quickNavCard:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.quickNavCard .card {
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.quickNavCard:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+.quickNavCard .card__header h3 {
+  color: var(--ifm-color-primary);
+}
+
+.quickNavCard .card__footer {
+  margin-top: auto;
+  text-align: right;
+}
