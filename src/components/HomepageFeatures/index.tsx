@@ -67,32 +67,27 @@ const QuickNavItems: QuickNavItem[] = [
   {
     title: 'Python基础',
     description: '变量、数据类型、条件语句、循环、函数等基础知识',
-    link: '/docs/category/python-basics',
+    link: '/docs/python-basics/variables',
   },
   {
     title: '数据结构',
     description: '列表、元组、字典、集合以及它们的操作方法',
-    link: '/docs/category/data-structures',
+    link: '/docs/data-structures/lists',
   },
   {
     title: '面向对象编程',
     description: '类、对象、继承、多态、封装等OOP概念',
-    link: '/docs/category/oop',
-  },
-  {
-    title: 'GUI编程',
-    description: '使用Tkinter创建图形用户界面',
-    link: '/docs/category/gui',
+    link: '/docs/advanced-topics/classes-objects',
   },
   {
     title: '期中考试资料',
     description: '历年期中考试题目及详细解析',
-    link: '/exams/midterm',
+    link: '/exams',
   },
   {
     title: '期末考试资料',
     description: '历年期末考试题目及详细解析',
-    link: '/exams/final',
+    link: '/exams',
   },
 ];
 
