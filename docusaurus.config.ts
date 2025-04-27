@@ -20,7 +20,7 @@ const config: Config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/yourname/csse1001-notes/tree/main/',
+            'https://github.com/wza15046319911/csse1001-notes/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -51,7 +51,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/yourname/csse1001-notes/tree/main/',
+            'https://github.com/wza15046319911/csse1001-notes/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -119,7 +119,7 @@ const config: Config = {
         },
         {to: '/blog', label: '学习技巧', position: 'left'},
         {
-          href: 'https://github.com/yourname/csse1001-notes',
+          href: 'https://github.com/wza15046319911/csse1001-notes',
           label: 'GitHub',
           position: 'right',
         },
@@ -133,7 +133,7 @@ const config: Config = {
           items: [
             {
               label: '课程笔记',
-              to: '/docs/intro',
+              to: '/docs',
             },
             {
               label: '配套习题',
@@ -167,7 +167,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/yourname/csse1001-notes',
+              href: 'https://github.com/wza15046319911/csse1001-notes',
             },
           ],
         },
