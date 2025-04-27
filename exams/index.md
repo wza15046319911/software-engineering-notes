@@ -15,7 +15,6 @@ sidebar_position: 1
 
 - [2023年期中考试](/exams/midterm/2023)
 - [2022年期中考试](/exams/midterm/2022)
-- [2021年期中考试](/exams/midterm/2021)
 - [期中考试常见题型分析](/exams/midterm/common-questions)
 - [期中考试备考策略](/exams/midterm/preparation)
 
@@ -25,8 +24,6 @@ sidebar_position: 1
 
 - [2023年期末考试](/exams/final/2023)
 - [2022年期末考试](/exams/final/2022)
-- [2021年期末考试](/exams/final/2021)
-- [期末考试常见题型分析](/exams/final/common-questions)
 - [期末考试备考策略](/exams/final/preparation)
 
 ## 考试答题技巧

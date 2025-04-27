@@ -44,7 +44,6 @@ CSSE1001（本科生）和CSSE7030（研究生）是昆士兰大学计算机科�
 - [Python基础](/docs/python-basics/variables) - 从变量和基本操作开始学习
 - [数据结构](/docs/data-structures/lists) - 学习Python中的主要数据结构
 - [高级主题](/docs/advanced-topics/type-hints) - 探索更复杂的编程概念
-- [GUI编程](/docs/gui-programming/intro-to-tkinter) - 学习如何创建图形用户界面
 
 ## 贡献与改进
 
