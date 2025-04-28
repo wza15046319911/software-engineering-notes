@@ -26,6 +26,7 @@ const sidebarExams: SidebarsConfig = {
       type: 'category',
       label: '期末考试',
       items: [
+        'final/2024s1',
         'final/2024s2',
         // 'final/2022',
         // 'final/2021',

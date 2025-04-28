@@ -1,50 +1,49 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'CSSE1001/7030 学习指南',
-  tagline: '全面的CSSE1001/7030课程资源 - 笔记、习题与考试准备',
-  favicon: 'img/favicon.ico',
+  title: "CSSE1001/7030 学习指南",
+  tagline: "全面的CSSE1001/7030课程资源 - 笔记、习题与考试准备",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: "https://your-docusaurus-site.example.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
-
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/wza15046319911/csse1001-notes/tree/main/',
+            "https://github.com/wza15046319911/csse1001-notes/tree/main/",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -52,22 +51,22 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'exercises',
-        path: 'exercises',
-        routeBasePath: 'exercises',
-        sidebarPath: './sidebars-exercises.ts',
+        id: "exercises",
+        path: "exercises",
+        routeBasePath: "exercises",
+        sidebarPath: "./sidebars-exercises.ts",
         // ... 其他选项
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'exams',
-        path: 'exams',
-        routeBasePath: 'exams',
-        sidebarPath: './sidebars-exams.ts',
+        id: "exams",
+        path: "exams",
+        routeBasePath: "exams",
+        sidebarPath: "./sidebars-exams.ts",
         // ... 其他选项
       },
     ],
@@ -75,76 +74,76 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'CSSE1001/7030 学习指南',
+      title: "CSSE1001/7030 学习指南",
       logo: {
-        alt: 'CSSE1001/7030 Logo',
-        src: 'img/logo.svg',
+        alt: "CSSE1001/7030 Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '课程笔记',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "课程笔记",
         },
         {
-          type: 'doc',
-          docId: 'index',
-          docsPluginId: 'exercises',
-          position: 'left',
-          label: '配套习题',
+          type: "doc",
+          docId: "index",
+          docsPluginId: "exercises",
+          position: "left",
+          label: "配套习题",
         },
         {
-          type: 'doc',
-          docId: 'index',
-          docsPluginId: 'exams',
-          position: 'left',
-          label: '考试资料',
+          type: "doc",
+          docId: "index",
+          docsPluginId: "exams",
+          position: "left",
+          label: "考试资料",
         },
         {
-          to: '/about', 
-          label: '关于我', 
-          position: 'right'
+          to: "/about",
+          label: "关于我",
+          position: "right",
         },
         {
-          href: 'https://github.com/wza15046319911/software-engineering-notes',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/wza15046319911/software-engineering-notes",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: '学习资源',
+          title: "学习资源",
           items: [
             {
-              label: '课程笔记',
-              to: '/docs',
+              label: "课程笔记",
+              to: "/docs",
             },
             {
-              label: '配套习题',
-              to: '/exercises',
+              label: "配套习题",
+              to: "/exercises",
             },
             {
-              label: '考试资料',
-              to: '/exams',
+              label: "考试资料",
+              to: "/exams",
             },
           ],
         },
         {
-          title: '更多',
+          title: "更多",
           items: [
             {
-              label: '关于我',
-              to: '/about',
+              label: "关于我",
+              to: "/about",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/wza15046319911/software-engineering-notes',
+              label: "GitHub",
+              href: "https://github.com/wza15046319911/software-engineering-notes",
             },
           ],
         },
