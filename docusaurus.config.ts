@@ -151,19 +151,6 @@ const config: Config = {
           ],
         },
         {
-          title: '社区',
-          items: [
-            {
-              label: 'UQ讨论区',
-              href: '#',
-            },
-            {
-              label: 'UQ官方课程',
-              href: '#',
-            },
-          ],
-        },
-        {
           title: '更多',
           items: [
             {

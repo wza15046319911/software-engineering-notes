@@ -32,7 +32,7 @@ export default function About() {
             </div>
           </div>
           <div className={styles.contentSection}>
-            <Heading as="h1">你好，我是你的导师</Heading>
+            <Heading as="h1">你好，我是你的导师Lewis</Heading>
             <div className={styles.experienceBox}>
               <Heading as="h2">丰富的教学经验</Heading>
               <ul>

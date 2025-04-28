@@ -53,6 +53,13 @@ const sidebars: SidebarsConfig = {
         'advanced-topics/exception-handling',
       ],
     },
+    {
+      type: 'category',
+      label: '附录',
+      items: [
+        'appendix/python-style-guide',
+      ],
+    },
   ],
 
   // But you can create a sidebar manually

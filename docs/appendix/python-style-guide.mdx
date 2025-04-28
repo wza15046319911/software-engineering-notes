@@ -1,0 +1,370 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Python 代码风格指南
+
+本文档结合了 [PEP8](https://www.python.org/dev/peps/pep-0008/) 和 [Google Python 风格指南](https://google.github.io/styleguide/pyguide.html)，提供了编写清晰、一致的 Python 代码的规范。良好的代码风格不仅提高代码的可读性，还能减少错误和提高协作效率。
+
+
+## 代码格式化
+
+### 缩进
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 使用**4个空格**进行缩进，不要使用制表符（Tab）。
+    - 函数和类定义的内容需要缩进。
+    - 续行（行延续）需要对齐或悬挂缩进。
+    ```python
+    # 正确的缩进示例
+    def long_function_name(
+            var_one, var_two, var_three,
+            var_four):
+        print(var_one)
+
+    # 或者使用悬挂缩进
+    def long_function_name(
+        var_one, var_two, var_three,
+        var_four):
+        print(var_one)
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 使用**4个空格**进行缩进，不要使用制表符（Tab）。
+    - 函数和类定义的内容需要缩进。
+    ```python
+    # 正确的缩进示例
+    def long_function_name(
+            var_one, var_two, var_three,
+            var_four):
+        print(var_one)
+    ```
+  </TabItem>
+</Tabs>
+
+
+### 行长度
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 每行最多不超过**80个字符**。
+    - 导入语句、注释中的URL和文档字符串中的长文本可以超过此限制。
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 每行最多不超过**80个字符**。
+    - 代码长度超过限制时，使用适当的换行方式。
+  </TabItem>
+</Tabs>
+
+### 换行
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 在二元运算符前换行，如 `+`, `-`, `*` 等。
+    - 在函数参数或列表元素之间换行。
+    - 使用括号表示隐式行连接。
+
+    ```python
+    # 推荐的换行方式
+    income = (gross_wages
+            + taxable_interest
+            + dividend_income
+            - ira_deduction)
+
+    # 函数参数换行
+    def my_function(
+        arg1, arg2, arg3,
+        arg4, arg5):
+        return arg1
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 使用括号表示隐式行连接。
+    - 在函数参数或列表元素之间换行。
+
+    ```python
+    # 基本换行示例
+    def my_function(arg1, arg2, 
+                    arg3, arg4):
+        return arg1
+    ```
+  </TabItem>
+</Tabs>
+
+### 空行
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 顶级函数和类定义之间使用**两个空行**。
+    - 方法定义之间使用**一个空行**。
+    - 可以使用额外的空行（有节制地）来分隔相关的代码块。
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 顶级函数和类定义之间使用空行。
+    - 方法定义之间使用空行。
+    - 使用空行分隔逻辑相关的代码块。
+  </TabItem>
+</Tabs>
+
+### 导入格式
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 导入应该分组放置，顺序如下：
+      1. 标准库导入
+      2. 相关第三方库导入
+      3. 本地应用/库特定导入
+    - 每组导入之间应该有一个空行。
+    - 避免使用通配符导入 (`from module import *`)。
+
+    ```python
+    # 标准库
+    import os
+    import sys
+
+    # 第三方库
+    import numpy as np
+    import pandas as pd
+
+    # 本地应用/库
+    from mypackage import mymodule
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 分组放置导入语句。
+    - 避免使用通配符导入 (`from module import *`)。
+
+    ```python
+    import os
+    import sys
+    
+    from mypackage import mymodule
+    ```
+  </TabItem>
+</Tabs>
+
+## 命名约定
+
+### 命名风格
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - **模块名**：短的、全小写的名字，可以使用下划线（如：`module_name`）
+    - **包名**：短的、全小写的名字，不推荐使用下划线（如：`package`）
+    - **类名**：采用 CapWords 约定（如：`ClassName`）
+    - **变量名**：小写，单词之间用下划线连接（如：`variable_name`）
+    - **函数名**：小写，单词之间用下划线连接（如：`function_name`）
+    - **常量**：全大写，单词之间用下划线连接（如：`CONSTANT_VALUE`）
+    - **私有成员**：以单下划线开头（如：`_private_var`）
+    - **内部变量**：以双下划线开头（如：`__internal_var`）
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - **类名**：采用 CapWords 约定（如：`ClassName`）
+    - **变量/函数名**：小写，单词之间用下划线连接（如：`variable_name`）
+    - **常量**：全大写，单词之间用下划线连接（如：`CONSTANT_VALUE`）
+  </TabItem>
+</Tabs>
+
+### 名称建议
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 避免使用单字符变量名（除了计数器和迭代器）。
+    - 尽量使用描述性名称，表明该变量、函数或类的用途。
+    - 避免使用与内建函数或模块名冲突的名称。
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 使用描述性名称，清晰表明变量、函数或类的用途。
+    - 避免使用与Python内建函数名冲突的名称（如`list`、`dict`、`sum`等）。
+  </TabItem>
+</Tabs>
+
+## 编程建议
+
+### 注释
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 使用英文注释（主流标准）或与代码一致的语言。
+    - 注释应该解释代码的作用及原因，而不是重复代码的内容。
+    - 每个函数、方法和类应该有文档字符串（docstring）。
+
+    ```python
+    def complex_function(arg1, arg2):
+        """简要描述函数功能。
+
+        详细描述函数的功能、参数和返回值等。
+
+        Args:
+            arg1: 第一个参数的描述
+            arg2: 第二个参数的描述
+
+        Returns:
+            返回值的描述
+
+        Raises:
+            ValueError: 描述可能引发的异常
+        """
+        # 实现代码...
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 注释应该解释代码的作用及原因。
+    - 函数应该有简洁明了的文档字符串。
+
+    ```python
+    def calculate_average(numbers):
+        """计算数字列表的平均值。"""
+        # 处理空列表的情况
+        if not numbers:
+            return 0
+        return sum(numbers) / len(numbers)
+    ```
+  </TabItem>
+</Tabs>
+
+### 比较
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 使用 `is` 或 `is not` 与 `None`, `True`, `False` 比较。
+    - 使用 `==` 或 `!=` 与其他值比较。
+    - 使用显式的比较，避免隐式的真值测试。
+
+    ```python
+    # 正确
+    if x is None:
+        pass
+
+    # 也正确
+    if value == 0:
+        pass
+
+    # 避免
+    if value:  # 当0、''、[]等被视为False时可能引起混淆
+        pass
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 使用 `is` 与 `None` 比较。
+    - 使用 `==` 与其他值比较。
+
+    ```python
+    # 正确的比较方式
+    if x is None:
+        pass
+        
+    if count == 0:
+        pass
+    ```
+  </TabItem>
+</Tabs>
+
+### 异常处理
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 异常处理应具体到某种异常类型，避免捕获所有异常。
+    - 使用 `with` 语句处理上下文管理器（如文件操作）。
+
+    ```python
+    # 推荐
+    try:
+        value = int(user_input)
+    except ValueError:
+        print("请输入一个有效的数字")
+
+    # 文件操作推荐用with语句
+    with open('file.txt', 'r') as file:
+        data = file.read()
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 捕获具体的异常类型。
+    - 使用 `with` 语句处理文件操作。
+
+    ```python
+    try:
+        result = 10 / num
+    except ZeroDivisionError:
+        result = 0
+        
+    with open('data.txt', 'r') as f:
+        content = f.read()
+    ```
+  </TabItem>
+</Tabs>
+
+## 类型注解
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - 对函数和方法的参数及返回值使用类型注解。
+    - 复杂类型可以使用 `typing` 模块。
+
+    ```python
+    from typing import List, Dict, Optional
+
+    def process_data(data: List[int], factor: int = 1) -> Dict[str, int]:
+        """处理整数列表并返回结果字典。"""
+        result = {}
+        for item in data:
+            result[str(item)] = item * factor
+        return result
+
+    def get_user(user_id: int) -> Optional[str]:
+        """获取用户名，如果用户不存在则返回None。"""
+        # 实现代码...
+    ```
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - 使用类型注解标明参数和返回值类型。
+    - 基本的类型注解包括：`int`, `float`, `str`, `bool`, `list`, `dict`等。
+
+    ```python
+    def calculate_area(radius: float) -> float:
+        """根据半径计算圆的面积。"""
+        return 3.14 * radius * radius
+        
+    def get_name(user_id: int) -> str:
+        """获取用户名称。"""
+        # 实现代码...
+    ```
+  </TabItem>
+</Tabs>
+
+## 工具推荐
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    为保持代码风格一致，建议使用以下工具：
+
+    - **黑色格式化程序(Black)**：自动格式化代码
+    - **pylint**：静态代码分析工具
+    - **flake8**：结合了pyflakes、pycodestyle和McCabe复杂度检查的工具
+    - **mypy**：类型检查器
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    了解常用的代码质量工具：
+    
+    - **pylint**：静态代码分析工具
+    - **flake8**：代码风格检查工具
+  </TabItem>
+</Tabs>
+
+## 总结
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    良好的代码风格是提高代码质量的重要因素。遵循这些规范不仅可以使你的代码更易读、更易维护，还能减少常见错误并提高团队协作效率。在编写Python代码时，尽量保持一致性，并记住"可读性很重要"是Python的核心理念之一。
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    在考试中，请记住以下关键点：
+    - 使用4个空格缩进
+    - 类名使用CapWords约定（如ClassName）
+    - 变量和函数名使用小写加下划线（如variable_name）
+    - 常量使用全大写（如MAX_VALUE）
+    - 为函数添加简洁的文档字符串
+    - 使用类型注解标注参数和返回值类型
+  </TabItem>
+</Tabs>
+
+## 参考资料
+<Tabs groupId="python-style">
+  <TabItem value="general" label="General" default>
+    - [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+    - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+    - [The Hitchhiker's Guide to Python](https://docs.python-guide.org/)
+  </TabItem>
+  <TabItem value="exam" label="Examinable">
+    - [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) (简明版)
+    - [Python 类型注解速查表](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
+  </TabItem>
+</Tabs> 
