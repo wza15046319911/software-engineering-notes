@@ -1,0 +1,99 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--ifm-color-primary);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.youtubeLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #FF0000;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.youtubeLink:hover {
+  background-color: #cc0000;
+  color: white;
+  text-decoration: none;
+}
+
+.contentSection {
+  flex: 1;
+}
+
+.experienceBox {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.experienceBox h2 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.experienceBox ul {
+  padding-left: 1.5rem;
+}
+
+.experienceBox li {
+  margin-bottom: 0.5rem;
+}
+
+.aboutText {
+  line-height: 1.6;
+}
+
+.aboutText p {
+  margin-bottom: 1rem;
+}
+
+/* 响应式设计 */
+@media (min-width: 768px) {
+  .aboutContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .profileSection {
+    flex: 0 0 30%;
+    position: sticky;
+    top: 2rem;
+  }
+  
+  .contentSection {
+    flex: 0 0 70%;
+  }
+} 

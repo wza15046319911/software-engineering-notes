@@ -119,6 +119,11 @@ const config: Config = {
         },
         {to: '/blog', label: '学习技巧', position: 'left'},
         {
+          to: '/about', 
+          label: '关于我', 
+          position: 'right'
+        },
+        {
           href: 'https://github.com/wza15046319911/software-engineering-notes',
           label: 'GitHub',
           position: 'right',
@@ -164,6 +169,10 @@ const config: Config = {
             {
               label: '学习技巧',
               to: '/blog',
+            },
+            {
+              label: '关于我',
+              to: '/about',
             },
             {
               label: 'GitHub',

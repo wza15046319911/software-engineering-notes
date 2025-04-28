@@ -29,6 +29,12 @@ function HomepageHeader() {
             to="/exams">
             查看考试资料 📝
           </Link>
+          <Link
+            className="button button--outline button--lg button--secondary"
+            style={{marginLeft: '1rem'}}
+            to="/about">
+            关于我 👨‍🏫
+          </Link>
         </div>
       </div>
     </header>
