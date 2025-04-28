@@ -13,17 +13,17 @@ sidebar_position: 1
 
 期中考试通常覆盖课程前半部分内容，包括Python基础和基本数据结构：
 
-- [2023年期中考试](/exams/midterm/2023)
-- [2022年期中考试](/exams/midterm/2022)
-- [期中考试常见题型分析](/exams/midterm/common-questions)
+<!-- - [2023年期中考试](/exams/midterm/2023) -->
+<!-- - [2022年期中考试](/exams/midterm/2022) -->
+<!-- - [期中考试常见题型分析](/exams/midterm/common-questions) -->
 - [期中考试备考策略](/exams/midterm/preparation)
 
 ## 期末考试资料
 
 期末考试覆盖整个学期的内容，重点考察高级主题和综合应用：
 
-- [2023年期末考试](/exams/final/2023)
-- [2022年期末考试](/exams/final/2022)
+- [Semester 2, 2024 Final Exam](/exams/final/2024s2)
+<!-- - [2022年期末考试](/exams/final/2022) -->
 - [期末考试备考策略](/exams/final/preparation)
 
 ## 考试答题技巧

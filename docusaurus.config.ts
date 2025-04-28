@@ -119,7 +119,7 @@ const config: Config = {
         },
         {to: '/blog', label: '学习技巧', position: 'left'},
         {
-          href: 'https://github.com/wza15046319911/csse1001-notes',
+          href: 'https://github.com/wza15046319911/software-engineering-notes',
           label: 'GitHub',
           position: 'right',
         },
@@ -150,11 +150,11 @@ const config: Config = {
           items: [
             {
               label: 'UQ讨论区',
-              href: 'https://piazza.com/',
+              href: '#',
             },
             {
               label: 'UQ官方课程',
-              href: 'https://my.uq.edu.au/',
+              href: '#',
             },
           ],
         },
@@ -167,7 +167,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/wza15046319911/csse1001-notes',
+              href: 'https://github.com/wza15046319911/software-engineering-notes',
             },
           ],
         },
