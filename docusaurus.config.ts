@@ -31,6 +31,7 @@ const config: Config = {
     locales: ['zh-Hans'],
   },
 
+
   presets: [
     [
       'classic',
@@ -41,21 +42,6 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/wza15046319911/csse1001-notes/tree/main/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/wza15046319911/csse1001-notes/tree/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -117,7 +103,6 @@ const config: Config = {
           position: 'left',
           label: '考试资料',
         },
-        {to: '/blog', label: '学习技巧', position: 'left'},
         {
           to: '/about', 
           label: '关于我', 
@@ -153,10 +138,6 @@ const config: Config = {
         {
           title: '更多',
           items: [
-            {
-              label: '学习技巧',
-              to: '/blog',
-            },
             {
               label: '关于我',
               to: '/about',
