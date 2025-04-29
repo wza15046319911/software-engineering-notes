@@ -1,370 +1,241 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Python代码规范（多院校适配版）
 
-# Python 代码风格指南
+> 作者参考了昆士兰大学、墨尔本大学等海外院校基础Python课程的code style打分标准，以及字节跳动内部的Python代码规范。适合新手培养良好编码习惯，也能避免课程中因不规范失分。
 
-本文档结合了 [PEP8](https://www.python.org/dev/peps/pep-0008/) 和 [Google Python 风格指南](https://google.github.io/styleguide/pyguide.html)，提供了编写清晰、一致的 Python 代码的规范。良好的代码风格不仅提高代码的可读性，还能减少错误和提高协作效率。
+## 目录
 
+1. [写在前面](#写在前面)
+2. [变量规范](#变量规范)
+   - [语义规范](#语义规范)
+   - [语法规范](#语法规范)
+   - [作用域规范](#作用域规范)
+3. [文件规范](#文件规范)
+4. [空格规范](#空格规范)
+5. [注释规范](#注释规范)
+   - [文档注释](#文档注释)
+   - [行间注释](#行间注释)
+   - [类型提示](#类型提示)
+6. [异常与条件](#异常与条件)
+   - [异常规范](#异常规范)
+   - [条件规范](#条件规范)
+7. [实战演练](#实战演练)
+8. [小结](#小结)
 
-## 代码格式化
+## 写在前面
 
-### 缩进
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 使用**4个空格**进行缩进，不要使用制表符（Tab）。
-    - 函数和类定义的内容需要缩进。
-    - 续行（行延续）需要对齐或悬挂缩进。
-    ```python
-    # 正确的缩进示例
-    def long_function_name(
-            var_one, var_two, var_three,
-            var_four):
-        print(var_one)
+本文档结合多所院校和大型公司（如字节跳动）的实践标准制定，适合初学者避免常见失误。遵循这些规范可以帮助你：
 
-    # 或者使用悬挂缩进
-    def long_function_name(
-        var_one, var_two, var_three,
-        var_four):
-        print(var_one)
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 使用**4个空格**进行缩进，不要使用制表符（Tab）。
-    - 函数和类定义的内容需要缩进。
-    ```python
-    # 正确的缩进示例
-    def long_function_name(
-            var_one, var_two, var_three,
-            var_four):
-        print(var_one)
-    ```
-  </TabItem>
-</Tabs>
+- 提升代码可读性
+- 避免常见错误
+- 培养专业的编码风格
 
+## 变量规范
 
-### 行长度
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 每行最多不超过**80个字符**。
-    - 导入语句、注释中的URL和文档字符串中的长文本可以超过此限制。
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 每行最多不超过**80个字符**。
-    - 代码长度超过限制时，使用适当的换行方式。
-  </TabItem>
-</Tabs>
+### 语义规范
 
-### 换行
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 在二元运算符前换行，如 `+`, `-`, `*` 等。
-    - 在函数参数或列表元素之间换行。
-    - 使用括号表示隐式行连接。
+1. **命名原则**
+   - 不要使用无意义的变量名（如`a`, `b`, `c`；`a1`, `b1`等）
+   - 使用全小写字母，单词之间用下划线`_`分隔
+   - 命名流程：中文含义 ➔ 翻译成最多三个英文单词 ➔ 用下划线连接
 
-    ```python
-    # 推荐的换行方式
-    income = (gross_wages
-            + taxable_interest
-            + dividend_income
-            - ira_deduction)
+2. **命名示例**
+   ```python
+   # 正确的命名
+   student_name = "Tom"
+   student_age = 18
+   
+   # 错误的命名
+   list = [1, 2, 3]  # 避免使用内置类型名
+   str = "hello"     # 避免使用内置类型名
+   ```
 
-    # 函数参数换行
-    def my_function(
-        arg1, arg2, arg3,
-        arg4, arg5):
-        return arg1
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 使用括号表示隐式行连接。
-    - 在函数参数或列表元素之间换行。
+3. **特殊场景**
+   - for循环内部可以用`i`, `j`, `k`作为索引变量
+   - 复数变量用复数形式，如`students`
+   - 同类对象区分时使用编号，如`student1`, `student2`
+   - 多次使用的数字定义为常量（全大写命名）：
+     ```python
+     MAX_RETRY = 3
+     DEFAULT_TIMEOUT = 30
+     ```
 
-    ```python
-    # 基本换行示例
-    def my_function(arg1, arg2, 
-                    arg3, arg4):
-        return arg1
-    ```
-  </TabItem>
-</Tabs>
+### 语法规范
 
-### 空行
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 顶级函数和类定义之间使用**两个空行**。
-    - 方法定义之间使用**一个空行**。
-    - 可以使用额外的空行（有节制地）来分隔相关的代码块。
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 顶级函数和类定义之间使用空行。
-    - 方法定义之间使用空行。
-    - 使用空行分隔逻辑相关的代码块。
-  </TabItem>
-</Tabs>
+1. **基本规则**
+   - 变量名只能包含字母、数字、下划线
+   - 不能以数字开头
+   - 不能是Python保留字或内置函数名
+   - 创建变量时必须是`变量名 = 值`的形式
 
-### 导入格式
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 导入应该分组放置，顺序如下：
-      1. 标准库导入
-      2. 相关第三方库导入
-      3. 本地应用/库特定导入
-    - 每组导入之间应该有一个空行。
-    - 避免使用通配符导入 (`from module import *`)。
+### 作用域规范
 
-    ```python
-    # 标准库
-    import os
-    import sys
+1. **基本原则**
+   - 避免使用全局变量
+   - 推荐使用常量替代硬编码的数字
+   - 常量用全大写表示
 
-    # 第三方库
-    import numpy as np
-    import pandas as pd
+## 文件规范
 
-    # 本地应用/库
-    from mypackage import mymodule
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 分组放置导入语句。
-    - 避免使用通配符导入 (`from module import *`)。
+1. **基本规则**
+   - 禁止在行末添加`;`
+   - 一行只写一个表达式
+   - 每行字符数不超过80个，必要时换行
+   - 缩进使用4个空格，禁止使用Tab
+   - 函数、类定义之间留一空行
 
-    ```python
-    import os
-    import sys
-    
-    from mypackage import mymodule
-    ```
-  </TabItem>
-</Tabs>
+## 空格规范
 
-## 命名约定
+1. **括号使用**
+   ```python
+   # 正确
+   sum(a, b)
+   
+   # 错误
+   sum( a, b )
+   ```
 
-### 命名风格
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - **模块名**：短的、全小写的名字，可以使用下划线（如：`module_name`）
-    - **包名**：短的、全小写的名字，不推荐使用下划线（如：`package`）
-    - **类名**：采用 CapWords 约定（如：`ClassName`）
-    - **变量名**：小写，单词之间用下划线连接（如：`variable_name`）
-    - **函数名**：小写，单词之间用下划线连接（如：`function_name`）
-    - **常量**：全大写，单词之间用下划线连接（如：`CONSTANT_VALUE`）
-    - **私有成员**：以单下划线开头（如：`_private_var`）
-    - **内部变量**：以双下划线开头（如：`__internal_var`）
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - **类名**：采用 CapWords 约定（如：`ClassName`）
-    - **变量/函数名**：小写，单词之间用下划线连接（如：`variable_name`）
-    - **常量**：全大写，单词之间用下划线连接（如：`CONSTANT_VALUE`）
-  </TabItem>
-</Tabs>
+2. **逗号和冒号**
+   ```python
+   # 正确
+   print(a, b)
+   
+   # 错误
+   print(a ,b)
+   ```
 
-### 名称建议
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 避免使用单字符变量名（除了计数器和迭代器）。
-    - 尽量使用描述性名称，表明该变量、函数或类的用途。
-    - 避免使用与内建函数或模块名冲突的名称。
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 使用描述性名称，清晰表明变量、函数或类的用途。
-    - 避免使用与Python内建函数名冲突的名称（如`list`、`dict`、`sum`等）。
-  </TabItem>
-</Tabs>
+3. **索引/切片**
+   ```python
+   # 正确
+   items[0:10]
+   
+   # 错误
+   items [0:10]
+   ```
 
-## 编程建议
+4. **二元操作符**
+   ```python
+   # 正确
+   if a == b and b != c:
+       pass
+   ```
 
-### 注释
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 使用英文注释（主流标准）或与代码一致的语言。
-    - 注释应该解释代码的作用及原因，而不是重复代码的内容。
-    - 每个函数、方法和类应该有文档字符串（docstring）。
+5. **等号使用**
+   ```python
+   # 创建变量时
+   count = 10
+   
+   # 指定默认参数时
+   def func(a=1, b=2):
+       pass
+   ```
 
-    ```python
-    def complex_function(arg1, arg2):
-        """简要描述函数功能。
+## 注释规范
 
-        详细描述函数的功能、参数和返回值等。
+### 文档注释
 
-        Args:
-            arg1: 第一个参数的描述
-            arg2: 第二个参数的描述
+1. **使用场景**
+   - 函数定义下方
+   - 类定义下方
 
-        Returns:
-            返回值的描述
+2. **标准格式**
+   ```python
+   def add_numbers(a: int, b: int) -> int:
+       """
+       Add two integers and return the result.
 
-        Raises:
-            ValueError: 描述可能引发的异常
-        """
-        # 实现代码...
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 注释应该解释代码的作用及原因。
-    - 函数应该有简洁明了的文档字符串。
+       Parameters:
+       a (int): The first number.
+       b (int): The second number.
 
-    ```python
-    def calculate_average(numbers):
-        """计算数字列表的平均值。"""
-        # 处理空列表的情况
-        if not numbers:
-            return 0
-        return sum(numbers) / len(numbers)
-    ```
-  </TabItem>
-</Tabs>
+       Returns:
+       int: The sum of a and b.
+       """
+       return a + b
+   ```
 
-### 比较
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 使用 `is` 或 `is not` 与 `None`, `True`, `False` 比较。
-    - 使用 `==` 或 `!=` 与其他值比较。
-    - 使用显式的比较，避免隐式的真值测试。
+### 行间注释
 
-    ```python
-    # 正确
-    if x is None:
-        pass
+1. **格式要求**
+   - 用`#`开始，后跟一个空格
+   - 注释要么写在上一行，要么同一行（代码和注释间隔至少两个空格）
 
-    # 也正确
-    if value == 0:
-        pass
+2. **示例**
+   ```python
+   # 初始化列表
+   my_list = []  # 创建一个空列表
+   ```
 
-    # 避免
-    if value:  # 当0、''、[]等被视为False时可能引起混淆
-        pass
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 使用 `is` 与 `None` 比较。
-    - 使用 `==` 与其他值比较。
+### 类型提示
 
-    ```python
-    # 正确的比较方式
-    if x is None:
-        pass
-        
-    if count == 0:
-        pass
-    ```
-  </TabItem>
-</Tabs>
+1. **使用说明**
+   - 仅起到标注作用，不会报错
+   - 写在函数参数和返回值部分
 
-### 异常处理
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 异常处理应具体到某种异常类型，避免捕获所有异常。
-    - 使用 `with` 语句处理上下文管理器（如文件操作）。
+2. **示例**
+   ```python
+   def greet(name: str) -> str:
+       return "Hello " + name
+   ```
 
-    ```python
-    # 推荐
-    try:
-        value = int(user_input)
-    except ValueError:
-        print("请输入一个有效的数字")
+## 异常与条件
 
-    # 文件操作推荐用with语句
-    with open('file.txt', 'r') as file:
-        data = file.read()
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 捕获具体的异常类型。
-    - 使用 `with` 语句处理文件操作。
+### 异常规范
 
-    ```python
-    try:
-        result = 10 / num
-    except ZeroDivisionError:
-        result = 0
-        
-    with open('data.txt', 'r') as f:
-        content = f.read()
-    ```
-  </TabItem>
-</Tabs>
+1. **基本原则**
+   - 禁止使用`assert`，应使用`raise`
+   - 捕获具体异常类型，禁止裸`except`
+   - 尽量缩小`try/except`包围的代码块范围
 
-## 类型注解
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - 对函数和方法的参数及返回值使用类型注解。
-    - 复杂类型可以使用 `typing` 模块。
+2. **示例**
+   ```python
+   try:
+       value = int(input("Enter a number: "))
+   except ValueError:
+       print("That's not a valid number!")
+   ```
 
-    ```python
-    from typing import List, Dict, Optional
+### 条件规范
 
-    def process_data(data: List[int], factor: int = 1) -> Dict[str, int]:
-        """处理整数列表并返回结果字典。"""
-        result = {}
-        for item in data:
-            result[str(item)] = item * factor
-        return result
+1. **基本原则**
+   - 优先使用隐式布尔判断
+   - 单个if语句最多包含两个条件
+   - if-else嵌套不要超过三层
 
-    def get_user(user_id: int) -> Optional[str]:
-        """获取用户名，如果用户不存在则返回None。"""
-        # 实现代码...
-    ```
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - 使用类型注解标明参数和返回值类型。
-    - 基本的类型注解包括：`int`, `float`, `str`, `bool`, `list`, `dict`等。
+2. **示例**
+   ```python
+   # 正确
+   if my_list:  # 而不是 if len(my_list) > 0
+       print("List is not empty")
+   ```
 
-    ```python
-    def calculate_area(radius: float) -> float:
-        """根据半径计算圆的面积。"""
-        return 3.14 * radius * radius
-        
-    def get_name(user_id: int) -> str:
-        """获取用户名称。"""
-        # 实现代码...
-    ```
-  </TabItem>
-</Tabs>
+## 实战演练
 
-## 工具推荐
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    为保持代码风格一致，建议使用以下工具：
+### 找茬练习题
 
-    - **黑色格式化程序(Black)**：自动格式化代码
-    - **pylint**：静态代码分析工具
-    - **flake8**：结合了pyflakes、pycodestyle和McCabe复杂度检查的工具
-    - **mypy**：类型检查器
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    了解常用的代码质量工具：
-    
-    - **pylint**：静态代码分析工具
-    - **flake8**：代码风格检查工具
-  </TabItem>
-</Tabs>
+**原代码（存在规范问题）**：
+```python
+a= 5
+if(a>0):
+  print ("positive")
+else:
+    print ("non-positive")
+```
 
-## 总结
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    良好的代码风格是提高代码质量的重要因素。遵循这些规范不仅可以使你的代码更易读、更易维护，还能减少常见错误并提高团队协作效率。在编写Python代码时，尽量保持一致性，并记住"可读性很重要"是Python的核心理念之一。
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    在考试中，请记住以下关键点：
-    - 使用4个空格缩进
-    - 类名使用CapWords约定（如ClassName）
-    - 变量和函数名使用小写加下划线（如variable_name）
-    - 常量使用全大写（如MAX_VALUE）
-    - 为函数添加简洁的文档字符串
-    - 使用类型注解标注参数和返回值类型
-  </TabItem>
-</Tabs>
+**规范化修改后**：
+```python
+a = 5
 
-## 参考资料
-<Tabs groupId="python-style">
-  <TabItem value="general" label="General" default>
-    - [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
-    - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
-    - [The Hitchhiker's Guide to Python](https://docs.python-guide.org/)
-  </TabItem>
-  <TabItem value="exam" label="Examinable">
-    - [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) (简明版)
-    - [Python 类型注解速查表](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-  </TabItem>
-</Tabs> 
+if a > 0:
+    print("positive")
+else:
+    print("non-positive")
+```
+
+## 小结
+
+遵循这些规范，可以帮助你在写Python代码时：
+
+- 提升代码可读性
+- 避免常见错误
+- 培养专业的编码风格
+- 在课程作业中获得更好的评分
