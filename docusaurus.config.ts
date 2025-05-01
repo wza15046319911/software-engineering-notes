@@ -75,6 +75,14 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    algolia: {
+      appId: 'MIBDZ7E0RI',
+      apiKey: 'f64637c8d420d834ec4dc54283968fe1',
+      indexName: 'csse1001-7030-vercel',
+      contextualSearch: true,
+      searchParameters: {},
+      insights: true
+    },
     navbar: {
       title: "CSSE1001/7030 学习指南",
       logo: {
