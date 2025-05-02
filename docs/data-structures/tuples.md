@@ -1,3 +1,9 @@
+---
+title: Python元组详解
+description: 深入讲解Python元组的概念、特性和应用场景，包括元组的不可变性、基本操作、遍历方法以及与列表的区别。
+keywords: [Python元组, 不可变序列, 元组操作, 元组应用, 数据结构]
+sidebar_position: 3
+---
 # 元组（Tuple）
 
 ## 元组的基本概念

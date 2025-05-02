@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '数据结构',
-      collapsed: false,
+      // collapsed: false,
       items: [
         'data-structures/lists',
         'data-structures/strings',

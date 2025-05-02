@@ -1,3 +1,9 @@
+---
+title: Python列表详解
+description: 全面介绍Python列表的概念、基本操作和常用方法，包括索引切片、元素操作、列表方法、嵌套列表和列表推导式等核心内容。
+keywords: [Python列表, 列表操作, 列表方法, 列表推导式, 数据结构]
+sidebar_position: 2
+---
 # 列表（List）
 
 ## 列表的基本概念

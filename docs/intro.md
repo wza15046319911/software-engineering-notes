@@ -1,4 +1,8 @@
 ---
+id: intro
+title: CSSE1001/7030学习指南介绍
+description: 昆士兰大学CSSE1001/7030课程的官方学习指南，包含Python编程基础、数据结构、面向对象编程等核心内容，提供详细的课程笔记、习题解析和考试资料。
+keywords: [Python编程, 数据结构, 面向对象编程, UQ课程, 编程学习]
 sidebar_position: 1
 slug: /
 ---

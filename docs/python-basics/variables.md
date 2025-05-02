@@ -1,4 +1,7 @@
 ---
+title: Python变量基础教程
+description: 深入讲解Python变量的定义、命名规则和最佳实践，包括变量类型、赋值操作、命名规范以及常量使用，帮助初学者掌握Python编程基础。
+keywords: [Python变量, 变量命名, 变量赋值, Python基础, 编程入门]
 sidebar_position: 1
 ---
 

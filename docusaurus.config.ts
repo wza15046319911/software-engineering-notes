@@ -10,15 +10,10 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://csse1001-7030-notes.vercel.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -45,6 +40,18 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
+          },
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -57,7 +64,6 @@ const config: Config = {
         path: "exercises",
         routeBasePath: "exercises",
         sidebarPath: "./sidebars-exercises.ts",
-        // ... 其他选项
       },
     ],
     [
@@ -67,7 +73,6 @@ const config: Config = {
         path: "exams",
         routeBasePath: "exams",
         sidebarPath: "./sidebars-exams.ts",
-        // ... 其他选项
       },
     ],
   ],
@@ -75,6 +80,10 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    metadata: [{
+      name: "keywords",
+      content: "CSSE1001/7030, Python编程, 数据结构, 面向对象编程, UQ课程, 编程学习",
+    }],
     algolia: {
       appId: 'MIBDZ7E0RI',
       apiKey: 'f64637c8d420d834ec4dc54283968fe1',

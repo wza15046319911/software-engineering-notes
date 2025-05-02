@@ -1,3 +1,10 @@
+---
+title: Python控制结构
+description: 详细讲解Python中的控制结构，包括条件判断、循环结构、控制语句等，以及Python特有的缩进规则和最佳实践，帮助初学者掌握程序流程控制。
+keywords: [Python控制流, 条件判断, 循环结构, 缩进规则, 流程控制]
+sidebar_position: 4
+---
+
 # 控制结构（Control Flow）
 
 控制结构让程序能够根据**条件**和**重复操作**来改变执行流程，是编程的核心组成之一。Python 主要包含：

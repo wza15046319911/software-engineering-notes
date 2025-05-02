@@ -1,3 +1,9 @@
+---
+title: Python面向对象编程详解
+description: 全面介绍Python面向对象编程的核心概念，包括类与对象、继承与多态、封装、魔术方法、属性装饰器等高级特性，帮助开发者掌握面向对象编程范式。
+keywords: [Python面向对象, 类与对象, 继承多态, 封装, 魔术方法]
+sidebar_position: 4
+---
 # 类与对象（Classes and Objects）
 
 ## 类与对象的基本概念

@@ -1,3 +1,9 @@
+---
+title: Python字典详解
+description: 深入讲解Python字典的概念、基本操作和常用方法，包括键值对访问、修改、删除、遍历等操作，以及字典的高级应用场景。
+keywords: [Python字典, 键值对, 字典操作, 字典方法, 数据结构]
+sidebar_position: 1
+---
 # 字典（Dictionary）
 
 ## 字典的基本概念

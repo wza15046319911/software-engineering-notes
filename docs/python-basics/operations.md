@@ -1,3 +1,9 @@
+---
+title: Python运算符与运算
+description: 深入讲解Python中的数学运算、比较运算和逻辑运算，包括运算符优先级、短路求值、链式比较等高级特性，帮助初学者掌握Python运算基础。
+keywords: [Python运算, 运算符, 数学运算, 逻辑运算, 比较运算]
+sidebar_position: 2
+---
 # Python运算（Operations）
 
 ## 数学运算（Arithmetic Operations）

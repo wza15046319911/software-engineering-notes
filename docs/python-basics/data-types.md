@@ -1,3 +1,10 @@
+---
+title: Python数据类型详解
+description: 全面介绍Python中的基本数据类型，包括整数、浮点数、字符串、列表、元组、字典、集合等，以及类型转换和各类数据类型的运算特性。
+keywords: [Python数据类型, 类型转换, 数据结构, 基本类型, 类型运算]
+sidebar_position: 3
+---
+
 # 数据类型（Data Types）
 
 ## 常见数据类型简介

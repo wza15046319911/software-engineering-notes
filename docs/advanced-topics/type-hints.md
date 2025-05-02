@@ -1,3 +1,9 @@
+---
+title: Python类型提示详解
+description: 全面介绍Python类型提示系统，包括基本类型标注、容器类型、特殊类型、类型别名、泛型等高级特性，帮助开发者编写更健壮的代码。
+keywords: [Python类型提示, 类型标注, 类型检查, 泛型编程, 静态类型]
+sidebar_position: 2
+---
 # 类型提示（Type Hint）
 
 ## 类型提示的基本概念

@@ -1,3 +1,9 @@
+---
+title: Python文件操作详解
+description: 深入讲解Python文件读写操作，包括文件打开模式、上下文管理器、文件指针操作、二进制文件处理、JSON和CSV文件处理等核心内容。
+keywords: [Python文件操作, 文件读写, 上下文管理器, 二进制文件, 文件处理]
+sidebar_position: 1
+---
 # 文件读写（File I/O）
 
 ## 文件读写的基本概念

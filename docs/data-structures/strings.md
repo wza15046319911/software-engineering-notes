@@ -1,3 +1,9 @@
+---
+title: Python字符串详解
+description: 全面介绍Python字符串的概念、基本操作和常用方法，包括字符串索引切片、不可变性、字符串方法、格式化等核心内容。
+keywords: [Python字符串, 字符串操作, 字符串方法, 字符串格式化, 数据结构]
+sidebar_position: 4
+---
 # 字符串（String）
 
 ## 字符串的基本概念

@@ -1,3 +1,9 @@
+---
+title: Python异常处理详解
+description: 深入讲解Python异常处理机制，包括try/except语法、异常类型、自定义异常、上下文管理器等核心内容，帮助开发者编写更健壮的程序。
+keywords: [Python异常处理, try/except, 异常类型, 自定义异常, 错误处理]
+sidebar_position: 3
+---
 # 异常处理（Exception Handling）
 
 ## 异常的基本概念

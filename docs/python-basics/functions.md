@@ -1,3 +1,9 @@
+---
+title: Python函数详解
+description: 深入讲解Python函数的概念、定义与调用、参数传递、作用域、返回值等核心内容，包括高级特性如lambda表达式、函数式编程等，帮助初学者掌握Python函数编程。
+keywords: [Python函数, 函数定义, 参数传递, 作用域, lambda表达式]
+sidebar_position: 5
+---
 # 函数（Functions）
 
 ## 函数的基本概念
