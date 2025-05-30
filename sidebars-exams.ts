@@ -17,8 +17,6 @@ const sidebarExams: SidebarsConfig = {
             items: [
                 "midterm/2024s2",
                 "midterm/2024s1",
-                "midterm/practice",
-                // 'midterm/preparation',
             ],
         },
         {
@@ -30,7 +28,6 @@ const sidebarExams: SidebarsConfig = {
                 "final/2023s2",
                 "final/2023s1",
                 "final/2022s2",
-                // 'final/preparation',
             ],
         },
     ],
