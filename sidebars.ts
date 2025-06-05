@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
                 "python-basics/data-types",
                 "python-basics/control-flow",
                 "python-basics/functions",
+                "python-basics/indentation",
             ],
         },
         {
@@ -41,6 +42,7 @@ const sidebars: SidebarsConfig = {
                 "data-structures/strings",
                 "data-structures/tuples",
                 "data-structures/dictionaries",
+                "data-structures/slicing-indexing",
             ],
         },
         {

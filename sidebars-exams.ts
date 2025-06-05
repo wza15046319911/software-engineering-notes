@@ -27,7 +27,6 @@ const sidebarExams: SidebarsConfig = {
                 "final/2024s1",
                 "final/2023s2",
                 "final/2023s1",
-                "final/2022s2",
             ],
         },
     ],
